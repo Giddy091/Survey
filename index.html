@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>Choose Your Survey</title>
+  <meta name="description" content="Choose a survey platform to continue.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Replace YOUR_RECAPTCHA_SITE_KEY with your reCAPTCHA v3 SITE key. -->
+  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY" async defer></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { ink: "#0b1220", mint: "#76f7c5" } } }
+    };
+  </script>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body class="min-h-screen bg-ink text-white antialiased">
+  <main class="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-5 py-12">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div class="glow glow-one"></div><div class="glow glow-two"></div>
+      <div class="absolute inset-0 opacity-[0.08]" style="background-image:radial-gradient(#fff 1px,transparent 1px);background-size:28px 28px"></div>
+    </div>
+
+    <section class="w-full max-w-2xl">
+      <div class="mb-8 flex items-center justify-center gap-3">
+        <div class="grid h-11 w-11 place-items-center rounded-2xl border border-white/15 bg-white/10 text-mint">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-6 w-6"><path d="M5 12.5 9.2 17 19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="text-sm font-semibold tracking-[0.22em] text-white/75">SURVEY PORTAL</span>
+      </div>
+
+      <div class="rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/30 backdrop-blur-xl sm:p-10">
+        <p class="mb-3 text-center text-xs font-bold uppercase tracking-[0.24em] text-mint">Your feedback matters</p>
+        <h1 class="text-center text-3xl font-bold tracking-tight sm:text-5xl">Choose your survey</h1>
+        <p class="mx-auto mt-4 max-w-lg text-center leading-7 text-slate-300">Select one of the options below to continue to its survey platform. It only takes a moment to get started.</p>
+
+        <div class="mt-9 grid gap-4">
+          <button class="survey-choice group" type="button" data-survey="survey1">
+            <span class="choice-icon">01</span>
+            <span class="flex-1 text-left"><span class="block font-semibold">Survey Option One</span><span class="mt-1 block text-sm text-slate-400">Continue to the first survey</span></span>
+            <svg class="h-5 w-5 text-slate-400 transition group-hover:translate-x-1 group-hover:text-mint" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="survey-choice group" type="button" data-survey="survey2">
+            <span class="choice-icon">02</span>
+            <span class="flex-1 text-left"><span class="block font-semibold">Survey Option Two</span><span class="mt-1 block text-sm text-slate-400">Continue to the second survey</span></span>
+            <svg class="h-5 w-5 text-slate-400 transition group-hover:translate-x-1 group-hover:text-mint" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="survey-choice group" type="button" data-survey="survey3">
+            <span class="choice-icon">03</span>
+            <span class="flex-1 text-left"><span class="block font-semibold">Survey Option Three</span><span class="mt-1 block text-sm text-slate-400">Continue to the third survey</span></span>
+            <svg class="h-5 w-5 text-slate-400 transition group-hover:translate-x-1 group-hover:text-mint" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div id="status" class="mt-5 hidden rounded-xl border px-4 py-3 text-sm" role="status" aria-live="polite"></div>
+        <p class="mt-6 text-center text-xs leading-5 text-slate-500">Protected by automated abuse checks. Your survey choice is not submitted until you select an option.</p>
+      </div>
+      <p class="mt-6 text-center text-xs text-slate-500">If you use a keyboard, touchscreen, or assistive technology, you can still select any option.</p>
+    </section>
+  </main>
+</body>
+</html>
